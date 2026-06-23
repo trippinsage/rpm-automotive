@@ -1,0 +1,26 @@
+{
+  "name": "RPM Automotive Repair Ltd",
+  "short_name": "RPM Auto",
+  "id": "/",
+  "description": "Burin Peninsula's trusted garage with two Marystown locations. Family-owned service for tires, undercoating, towing, brakes, inspections & full repairs.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#1a2233",
+  "theme_color": "#0A2463",
+  "lang": "en-CA",
+  "icons": [
+    {
+      "src": "img/favicons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/favicons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
