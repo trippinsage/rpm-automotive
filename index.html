@@ -5,9 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0A2463">
     <meta name="color-scheme" content="light">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z5VXPSR8NR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Z5VXPSR8NR');
+    </script>
 
     <!-- ====================== PERFORMANCE & CORE OPTIMIZATIONS ====================== -->
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 
     <!-- Critical resource preloading for faster LCP and better Core Web Vitals -->
     <link rel="preload" href="img/rpm-logo.webp" as="image" fetchpriority="high">
@@ -85,6 +96,11 @@
         "postalCode": "A0E 2M0",
         "addressCountry": "CA"
       },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 47.18053571421469,
+                "longitude": -55.14765622486978
+            },
       "hasMap": "https://www.google.com/maps/place/310+McGettigan+Blvd,+Marystown,+NL+A0E+2M0",
       "areaServed": [
         {"@type": "Place", "name": "Burin Peninsula"},
@@ -129,6 +145,11 @@
         {
           "@type": "Place",
           "name": "RPM Main Garage",
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 47.18053571421469,
+                        "longitude": -55.14765622486978
+                    },
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "310 McGettigan Blvd",
@@ -142,6 +163,11 @@
           "@type": "Place",
           "name": "RPM Route 210 Location",
           "description": "Second location on Route 210 serving eastern Burin Peninsula communities including Boat Harbour, Brookside and beyond — 24/7 emergency towing & roadside support",
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 47.485682450667674,
+                        "longitude": -54.80288020571703
+                    },
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Route 210",
@@ -734,7 +760,7 @@
             <div class="section-header">
                 <span class="hwh-eyebrow">Get in Touch</span>
                 <h2 id="contact-heading" class="section-title">Book Service or Ask a Question</h2>
-                <p class="section-subtitle">Whether it’s a quick question or a full booking, we’re here. Call, email, or send a message below and we’ll get back to you fast.</p>
+                <p class="section-subtitle">Call the shop directly for a quote, booking, tire availability, or expert advice.</p>
             </div>
 
             <div class="contact-card">
@@ -790,42 +816,21 @@
                     </div>
                 </div>
 
-                <div class="contact-form-panel">
-                    <h3>Send a Message</h3>
-                    <form id="contactForm" class="contact-form" action="mailto:sales@rpm.repair?subject=RPM%20Automotive%20website%20inquiry" method="post" enctype="text/plain" aria-describedby="form-note">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input id="name" name="name" type="text" required minlength="2" autocomplete="name" aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input id="email" name="email" type="email" required autocomplete="email" aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input id="phone" name="phone" type="tel" required autocomplete="tel" aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Service Needed</label>
-                            <select id="service" name="service" required aria-required="true">
-                                <option value="">Select a service...</option>
-                                <option>Tire Purchase / Installation</option>
-                                <option>Undercoating</option>
-                                <option>Brake &amp; Suspension</option>
-                                <option>Vehicle Inspection</option>
-                                <option>Towing / Roadside</option>
-                                <option>Oil Change / Maintenance</option>
-                                <option>General Inquiry</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" maxlength="1200" required aria-required="true"></textarea>
-                        </div>
-                        <p class="form-helper" id="form-note">This opens your email app with the details above. Review the message there and choose Send.</p>
-                        <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
-                        <button type="submit" class="btn btn-primary btn-block">Open Email to Send</button>
-                    </form>
+                <div class="contact-call-panel">
+                    <div class="contact-call-icon"><i data-lucide="phone-call" aria-hidden="true"></i></div>
+                    <h3>Talk to the Shop</h3>
+                    <p class="contact-call-lead">A real person can confirm availability, answer questions, and get your vehicle booked faster.</p>
+                    <div class="contact-call-actions">
+                        <a href="tel:7092795282" class="btn btn-primary btn-large">
+                            <i data-lucide="phone" class="btn-icon" aria-hidden="true"></i>
+                            Call the Shop
+                        </a>
+                        <a href="tel:7092770693" class="btn btn-accent btn-large">
+                            <i data-lucide="truck" class="btn-icon" aria-hidden="true"></i>
+                            Call 24/7 Towing
+                        </a>
+                    </div>
+                    <p class="contact-call-note">Shop: (709) 279-5282<br>24/7 towing: (709) 277-0693</p>
                 </div>
             </div>
         </section>
@@ -840,29 +845,25 @@
             <div class="locations-grid">
                 <!-- Main Garage – 310 McGettigan Blvd -->
                 <div class="location-card">
-                    <img src="img/new-location-open.jpg" alt="RPM Main Garage at 310 McGettigan Boulevard is now open" width="1200" height="800" loading="lazy">
                     <h3>RPM Main Garage — Now Open</h3>
                     <p>310 McGettigan Blvd, Marystown, NL A0E 2M0</p>
                     <p>Monday–Friday 8:00 am – 4:30 pm • Saturday 9:00 am – 2:00 pm</p>
                     <a href="tel:7092795282" class="phone-link">(709) 279-5282</a>
-                    <a href="https://maps.google.com/?q=310+McGettigan+Blvd,+Marystown,+NL+A0E+2M0" target="_blank" rel="noopener noreferrer" class="btn btn-accent mt-1">Get Directions</a>
-                    <button class="btn btn-secondary mt-1 view-map-btn" type="button" data-map="main" aria-expanded="false" aria-controls="main-map">View Map</button>
-                    <div class="map-container hidden" id="main-map">
-                        <iframe data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2782.4!2d-55.152!3d47.1667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s310+McGettigan+Blvd%2C+Marystown%2C+NL+A0E+2M0!5e0!3m2!1sen!2sca" allowfullscreen loading="lazy" title="RPM Main Garage Map"></iframe>
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=47.18053571421469%2C-55.14765622486978" target="_blank" rel="noopener noreferrer" class="btn btn-accent mt-1">Get Directions</a>
+                    <div class="map-container" id="main-map">
+                        <iframe src="https://www.google.com/maps?q=47.18053571421469%2C-55.14765622486978&amp;z=16&amp;output=embed" allowfullscreen loading="lazy" title="RPM Main Garage location map"></iframe>
                     </div>
                 </div>
 
                 <!-- Route 210 Location -->
                 <div class="location-card">
-                    <img src="img/lakeside-rpm.webp" alt="RPM Automotive Route 210 location" width="1280" height="960" loading="lazy">
                     <h3>RPM Route 210 Location</h3>
                     <p>Route 210, Marystown, NL</p>
                     <p>24/7 emergency towing &amp; roadside support with full fleet</p>
                     <a href="tel:7092770693" class="phone-link">(709) 277-0693</a>
-                    <a href="https://maps.google.com/?q=47.485308635557764,-54.803717919469726" target="_blank" rel="noopener noreferrer" class="btn btn-accent mt-1">Get Directions</a>
-                    <button class="btn btn-secondary mt-1 view-map-btn" type="button" data-map="route" aria-expanded="false" aria-controls="route-map">View Map</button>
-                    <div class="map-container hidden" id="route-map">
-                        <iframe data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1500!2d-54.803717919469726!3d47.485308635557764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sRoute+210%2C+Marystown%2C+NL!5e0!3m2!1sen!2sca" allowfullscreen loading="lazy" title="RPM Route 210 Location Map"></iframe>
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=47.485682450667674%2C-54.80288020571703" target="_blank" rel="noopener noreferrer" class="btn btn-accent mt-1">Get Directions</a>
+                    <div class="map-container" id="route-map">
+                        <iframe src="https://www.google.com/maps?q=47.485682450667674%2C-54.80288020571703&amp;z=16&amp;output=embed" allowfullscreen loading="lazy" title="RPM Route 210 location map"></iframe>
                     </div>
                 </div>
             </div>

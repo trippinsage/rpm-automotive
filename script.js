@@ -3,7 +3,7 @@
  * Production-ready JavaScript
  * Updated June 2026 - aligned with current static site structure and hours
  * Features: Mobile menu, live Newfoundland hours, typewriter, smooth scroll,
- * active nav state, email-form formatting, FAQ accordion, scroll progress,
+ * active nav state, FAQ accordion, scroll progress,
  * header shrink, map toggles, and accessibility improvements
  */
 
@@ -293,52 +293,6 @@ if (typewriterEl) {
         }, { passive: true });
     }
 
-    // ====================== CONTACT FORM ======================
-    const form = document.getElementById('contactForm');
-    if (form) {
-        form.addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            const statusEl = document.getElementById('formStatus');
-
-            function setFormStatus(message, tone) {
-                if (!statusEl) return;
-
-                statusEl.textContent = message;
-                statusEl.classList.remove('form-status--success', 'form-status--error', 'form-status--pending');
-
-                if (tone) {
-                    statusEl.classList.add(`form-status--${tone}`);
-                }
-            }
-
-            if (!form.checkValidity()) {
-                form.reportValidity();
-                setFormStatus('Please fill in all required fields.', 'error');
-                return;
-            }
-
-            const data = new FormData(form);
-            const name = String(data.get('name') || '').trim();
-            const email = String(data.get('email') || '').trim();
-            const phone = String(data.get('phone') || '').trim();
-            const service = String(data.get('service') || '').trim();
-            const message = String(data.get('message') || '').trim();
-            const subject = `RPM Automotive ${service} inquiry from ${name}`;
-            const body = [
-                `Name: ${name}`,
-                `Email: ${email}`,
-                `Phone: ${phone}`,
-                `Service: ${service}`,
-                '',
-                message
-            ].join('\n');
-
-            setFormStatus('Opening your email app. Review the message there and choose Send.', 'success');
-            window.location.href = `mailto:sales@rpm.repair?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        });
-    }
-
     // ====================== FAQ ACCORDION ======================
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach((item) => {
@@ -348,25 +302,6 @@ if (typewriterEl) {
                     if (other !== this) other.open = false;
                 });
             }
-        });
-    });
-
-    // ====================== LOCATION MAP TOGGLE ======================
-    document.querySelectorAll('.view-map-btn').forEach((btn) => {
-        btn.addEventListener('click', () => {
-            const mapId = btn.getAttribute('data-map');
-            const mapEl = document.getElementById(`${mapId}-map`);
-            if (!mapEl) return;
-
-            const iframe = mapEl.querySelector('iframe[data-src]');
-            if (iframe && !iframe.hasAttribute('src')) {
-                iframe.src = iframe.dataset.src;
-            }
-
-            mapEl.classList.toggle('hidden');
-            const isExpanded = !mapEl.classList.contains('hidden');
-            btn.textContent = isExpanded ? 'Hide Map' : 'View Map';
-            btn.setAttribute('aria-expanded', String(isExpanded));
         });
     });
 
